@@ -94,7 +94,7 @@ F=F_{\eta}+F_{\tau}=\frac{12\eta LA{_p}{^2}}{\pi Dh^3}v+\frac{3L\tau_yA_p}{h}sgn
 
 式中:$F_{\eta}$为粘滞力；$F_{\tau}$为库仑阻尼力；$\eta$为MRF的零场黏度；$L$为活塞有效长度，即有效磁极宽度；$A_p$为活塞面积；$h$为活塞与缸体间的阻尼通道间隙；$D$为活塞外径；$\tau_y$为MRF的剪切屈服强度；$v$为活塞相对于缸体的运动速度。粘滞力与磁场强度无关，仅有MRF自身性质及活塞相对于缸体的运动速度有关，不可调控；库仑阻尼力在总阻尼力中比重较大，且可由磁场强度精确控制。
 
-式\eqref{F}中各参数关系复杂，本文没有直接求解，而是编写程序，根据待定参数磁芯半径$r$和阻尼通道宽度$h$自动进行组合、迭代与测试，经过与加工厂商量，考虑模型的实际加工难度和成本，最终确定$r=11mm$、$h=1mm$及各项设计参数见表\ref{element},见图\ref{detail}。
+式\eqref{F}中各参数关系复杂，本文没有直接求解，而是编写程序，根据待定参数磁芯半径$r$和阻尼通道宽度$h$自动进行组合、迭代与测试，经过与加工厂商量，考虑模型的实际加工难度和成本，最终确定$r=11mm$、$h=1mm$及各项设计参数，见表\ref{element}。MR阻尼器活塞细部见图\ref{detail}。
 
 \begin{table}[htbp]
 \centering
@@ -116,6 +116,7 @@ F=F_{\eta}+F_{\tau}=\frac{12\eta LA{_p}{^2}}{\pi Dh^3}v+\frac{3L\tau_yA_p}{h}sgn
 	\centering
 	\caption{活塞细部图\\
 		Fig}
+	\label{detail}
 	\includegraphics[width=4in]{figure/detail}
 \end{figure}
 
