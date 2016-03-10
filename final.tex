@@ -1,0 +1,170 @@
+\documentclass[12pt]{article}
+
+%---------------------------------
+%中文设置
+\usepackage[UTF8]{ctexcap}
+\setCJKsansfont[ItalicFont={黑体}]{宋体}
+\renewcommand\CJKfamilydefault{\CJKsfdefault}
+\setCJKmonofont{仿宋}
+
+%英文字体
+\setmainfont{Times New Roman}
+
+
+\renewcommand{\figurename}{图}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\abstractname}{摘要}
+\renewcommand{\refname}{参考文献}
+\setlength{\parindent}{3em}
+
+%页眉页脚
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhead[L]{多功能职工文化中心 计算书}
+%\fancyhead[R]{结32 王超杰 2013010179}
+
+%---------------------------------
+%matlab代码显示
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+%---------------------------------
+%数学符号显示
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{bm}
+
+%---------------------------------
+%罗马数字定义
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+%\renewcommand{\labelenumi}{\roman{enumi}}
+
+%---------------------------------
+%方程组
+%\begin{equation}
+%   \left\{
+%   \begin{aligned}
+%       &x_2 =0\\
+%       &x_1 =0\\
+%       &x_1 =1\\
+%       &x_2(1-x_1)^4 =1
+%   \end{aligned}
+%   \right.
+%\end{ }
+
+%---------------------------------
+%插图
+\usepackage{graphicx}
+
+%单图
+%\begin{figure}[!htbp]
+%  \centering
+%  \includegraphics[width=0.7\textwidth]{ }
+%  \caption{ }
+%  %\label{ }
+%\end{ }
+
+%单图不浮动
+\usepackage{float}
+%\begin{figure}[H]
+%   \centering
+%   \includegraphics[ ]{ }
+%   \caption{ }
+%\end{ }
+
+%文字绕排
+\usepackage{wrapfig}
+%\begin{wrapfigure}[<行数>]{<位置>l/r}[<外伸长度>}]{<宽度>}
+%   \centering
+%   \caption{ }
+%   \includegraphics[ ]{ }
+%\end{ }
+
+%双图
+%\begin{figure}
+%   \centering
+%   \caption{ }
+%   \includegraphics[ ]{ }
+%       \subcaption{ }
+%   \qquad
+%   \includegraphics[ ]{ }
+%       \subcaption{ }
+%\end{ }
+
+%---------------------------------
+%标题
+\usepackage{caption, subcaption}
+%\captionsetup{font = {small, sf}, labelfont = bf}
+%字号选择：
+%- scriptsize
+%- footnotesize
+%- small
+%- normalsize
+%- large
+%- Large
+%
+%字体族：
+%- rm 罗马体
+%- sf 无衬线体
+%- tt 打字机体
+%
+%字体系列：
+%- md 中等粗细
+%- bf 粗体
+%
+%字体形状：
+%- up 直立体
+%- it 意大利体
+%- sl 倾斜体
+%- sc 小型大写字母
+
+%---------------------------------
+%表格
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{bigstrut}
+\usepackage{multirow}
+
+\usepackage{chngpage}
+%\begin {table}[H]
+%\caption{This is a long table}
+%\begin{adjustwidth}{-3cm}{} %第一个参数为调整左页边距，第二个参数右页边距可置空
+%\end{adjustwidth}
+%\end{table}
+
+\usepackage{import}
+%---------------------------------
+\def\tightlist{}
+
+%---------------------------------
+\begin{document}
+
+\title{ 磁流变液\\
+	MRF}
+\date{\today}
+\author{王超杰\and 吕晚晴\and 苗增辉\and 林超超}
+
+\maketitle
+
+%---------------------------------
+\abstract
+
+\thispagestyle{empty}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+%---------------------------------
+
+\input{introduction.tex}
+\input{background.tex}
+\input{theory.tex}
+\input{experiment.tex}
+
+%---------------------------------
+\end{document}
