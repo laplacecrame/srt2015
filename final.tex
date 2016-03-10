@@ -16,6 +16,27 @@
 \renewcommand{\abstractname}{摘要}
 \renewcommand{\refname}{参考文献}
 \setlength{\parindent}{3em}
+%图表标题设置
+\usepackage[margin=9pt, font=small, labelfont=bf,labelsep=endash]{caption}
+
+\usepackage{enumitem}
+%----------------------------------
+%页面设置
+
+%用paragraph增设section
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%页面边距
+
+\usepackage{geometry}
+\geometry{left=0.5in, right=0.5in}
 
 %页眉页脚
 %\usepackage{fancyhdr}
@@ -144,7 +165,7 @@
 
 \title{ 磁流变液\\
 	MRF}
-\date{\today}
+\date{}
 \author{王超杰\and 吕晚晴\and 苗增辉\and 林超超}
 
 \maketitle
@@ -165,6 +186,12 @@
 \input{background.tex}
 \input{theory.tex}
 \input{experiment.tex}
+
+%---------------------------------
+%参考文献
+
+\bibliographystyle{plain}
+\bibliography{bibtex/report}
 
 %---------------------------------
 \end{document}
