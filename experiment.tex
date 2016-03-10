@@ -3,14 +3,12 @@
 \subsubsection{整体结构}
 从工作模式来分，MR阻尼器主要有阀式、挤压流动式、剪切式、剪切阀式四种形式；从受力方式来分，可以分为单出杆和双出杆两种类型；从活塞相对于缸体的运动方式来看，可以分为直线型和旋转型。本组采用了剪切阀式、单出杆、直线型MR阻尼器。具体结构分析见图 \ref{mrdamper}。
 
-\begin{figure}[htbp]
+\begin{figure}[H]
 	\centering
-	\caption{MR阻尼器整体结构\\
-		Fig \\
-		1:端盖; 2:缸壁; 3:线圈挖槽; 4:活塞杆; 5:阻尼通道; 6:磁芯}
+	\bicaption{MR阻尼器整体结构}{English title}
+		{1:端盖; 2:缸壁; 3:线圈挖槽; 4:活塞杆; 5:阻尼通道; 6:磁芯}
 		\label{mrdamper}
 	\includegraphics[width=6in]{figure/mrdamper}
-
 \end{figure}
 
 \subsubsection{材料选择}
@@ -37,8 +35,7 @@ MR阻尼器的主要结构部件包括缸筒、活塞盘、活塞杆、端盖及
 
 设计过程中已知参数见表\ref{init}。
 \begin{table}[H]
-\caption{设计参数\\
-	Table}
+\bicaption{设计参数}{Table}
 \centering
 \label{init}
 \footnotesize
@@ -96,10 +93,9 @@ F=F_{\eta}+F_{\tau}=\frac{12\eta LA{_p}{^2}}{\pi Dh^3}v+\frac{3L\tau_yA_p}{h}sgn
 
 式\eqref{F}中各参数关系复杂，本文没有直接求解，而是编写程序，根据待定参数磁芯半径$r$和阻尼通道宽度$h$自动进行组合、迭代与测试，经过与加工厂商量，考虑模型的实际加工难度和成本，最终确定$r=11mm$、$h=1mm$及各项设计参数，见表\ref{element}。MR阻尼器活塞细部见图\ref{detail}。
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
-\caption{设计尺寸\\
-	Table}
+\bicaption{设计尺寸}{Table}
 \label{element}
 \footnotesize
 \begin{tabular}{|c|c|c|c|}
@@ -114,8 +110,7 @@ F=F_{\eta}+F_{\tau}=\frac{12\eta LA{_p}{^2}}{\pi Dh^3}v+\frac{3L\tau_yA_p}{h}sgn
 
 \begin{figure}[htb]
 	\centering
-	\caption{活塞细部图\\
-		Fig}
+	\bicaption{活塞细部图}{Fig}
 	\label{detail}
 	\includegraphics[width=4in]{figure/detail}
 \end{figure}
@@ -176,8 +171,7 @@ E=\frac{d\Phi}{dt}
 
 \begin{figure}[H]
 \centering
-\caption{直线型发电机模型\\
-	Fig}
+\bicaption{直线型发电机模型}{Fig}
 \label{powerstation}
 \includegraphics[width=4in]{figure/straight}
 \end{figure}

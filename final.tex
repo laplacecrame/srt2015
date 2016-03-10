@@ -17,7 +17,17 @@
 \renewcommand{\refname}{参考文献}
 \setlength{\parindent}{3em}
 %图表标题设置
-\usepackage[margin=9pt, font=small, labelfont=bf,labelsep=endash]{caption}
+\usepackage[margin=9pt, font=small, labelfont=bf,labelsep=quad]{caption}
+
+%中英双标题
+%\bicaption{中文标题}{English title}
+\usepackage{bicaption}[2012/04/09 v1.1]
+
+\captionsetup[figure][bi-first]{name=图}
+\captionsetup[figure][bi-second]{name=Figure}
+
+\captionsetup[table][bi-first]{name=表}
+\captionsetup[table][bi-second]{name=Table}
 
 \usepackage{enumitem}
 %----------------------------------
