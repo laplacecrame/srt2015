@@ -171,7 +171,7 @@ PID控制是比例（P）、偏差积分（I）、偏差微分（D）控制的�
 
 
 \paragraph{PID控制基本原理}
-控制规律为
+\qquad 控制规律为
 \[\mathrm{u}(t)=\mathrm{MV}(t)=K_p{e(t)} + K_{i}\int_{0}^{t}{e(\tau)}\,{d\tau} + K_{d}\frac{de(t)}{dt}\]
 
 其中:
@@ -183,15 +183,15 @@ $t$：目前时间\\
 $\tau$：积分变数，数值从0到目前时间t
 
 \paragraph{PID控制器设计及参数整定}
-采用PID控制策略时，$K_{k},K_{i},K_{p}$三个参数对系统的控制效果起决定性作用，采用凑试发确定 PID参数，分为以下几步：
+\qquad 采用PID控制策略时，$K_{k},K_{i},K_{p}$三个参数对系统的控制效果起决定性作用，采用凑试发确定 PID参数，分为以下几步：
 \begin{enumerate}
 \item 首先选择 $K_p$ 值得到期望的暂态响应，而置 $K_i,K_d$为零，然后逐步改变 $K_p$,同时观察系统变化，知道控制系统得到响应较好，超调小的响应曲线。此时系统仍有较大的稳态误差。
 \item 加入积分环境，整定积分参数。首先置$K_i$为一个较小的值，同时变化$K_p$为较小值，不断变化$K_i$，使系统在保持良好动态性能的情况喜爱，静差得到消除。
 \item 加入微分环节，构成PID控制器，微分系数$K_d$的整定方法同第二步，逐步增大$K_d$的同时相应地变化$K_p,K_i$，逐步试凑，以获得满意的调节效果和控制参数。
 \end{enumerate}
 
-\paragraph{PID控制仿真结果}
-XXXX
+%\paragraph{PID控制仿真结果}
+
 
 \subsubsection{模糊控制}
 磁流变阻尼器双态控制和三态控制电流的选择档次只有两档和三档，控制较为粗糙，想要实现精确地控制加入磁流变阻尼器的结构，最好实行全态控制。
@@ -236,11 +236,11 @@ XXXX
 \includegraphics[width=0.5\linewidth]{figure/fuzzyeg}
 \end{figure}
 
-\paragraph{模糊控制仿真}
-\qquad XXXX
+%\paragraph{模糊控制仿真}
+%\qquad
 
-\subsubsection{天棚阻尼}
-XXXX
+%\subsubsection{天棚阻尼}
+%
 
 
 
