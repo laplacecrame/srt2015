@@ -21,8 +21,88 @@
 电磁感应能量转换系统，通俗而言，就是应用电磁感应技术进行发电的发电机。电磁感应技术是一项非常成熟，应用发展也非常完善的发电技术。相比于压电能量捕获技术，电磁感应技术电能转换效率更高、发电量更大、理论技术也更为完善，最重要的是，它能够适应土木工程结构低频振动的特点，相对高效地进行结构振动能量收割。目前商用的发电机多为旋转式发电机，但考虑到结构振动是线性运动，如使用旋转式发电机，还需要增加转换装置，制作复杂，也使得机械能耗散加大，降低能量转换效率，所以我们决定根据结构特点，设计直线型发电机用于能量收割。
 
 \subsection{最优控制力求解}
+线性结构在外部激励和作动器出力的共同作用下，运动方程为
+\begin{equation}
+\mathbf{M \"{X} + C\.{X} +KX=F(t)+Du} \label{zongfangcheng}
+\end{equation}
+式中，$\mathbf{K,M,K}$为结构的质量矩阵、阻尼矩阵和刚度矩阵，$\mathbf{F(t)}$为外部激励，$\mathbf{D}$为作动器的位置向量，$\mathbf{u}$为作动器的控制力。
 
-LQR
+将式\eqref{zongfangcheng}转化为状态方程，令$\mathbf{U=\left(X,\.{X}\right)^T}$，则
+\begin{equation}
+\dot{\mathbf{U}}=\mathbf{AU+Bu+HF(t)}   \label{zhuangtai}
+\end{equation}
+式中，
+
+\begin{equation}
+\mathbf{
+A=\left[
+\begin{array}{cc}
+0 & I \\
+-M^{-1}K & -M^{-1}C
+\end{array}
+\right],
+B=\left[
+\begin{array}{c}
+0 \\
+M^{-1}D
+\end{array}
+\right],
+B=\left[
+\begin{array}{c}
+0 \\
+M^{-1}
+\end{array}
+\right]
+}
+\end{equation}
+
+式\ref{zhuangtai}中，出力结构的状态\textbf{U}未知外，作动器的控制力\textbf{u}同样未知，所以关键是如何得到\textbf{u}.
+
+\subsection{经典最优控制}
+定义性能指标：
+\begin{equation}
+\mathbf{min\quad J=\int^{t_f}_0\left[U^T(t)QU(t)+u^T(t)Ru(t)\right]\mathrm{d}t}
+\end{equation}
+式中，\textbf{Q,R}为权矩阵，分别表示控制效果的权值和控制力的权值。
+\begin{equation}
+\mathbf{s.t.\quad} \dot{\mathbf{U}}=\mathbf{AU+Bu+HF(t)},\quad \mathbf{U(0)=U_0}　　\label{dairu1}
+\end{equation}
+
+用优化的方法，可以得到
+\begin{equation}
+\dot{\mathbf{\lambda}}=\mathbf{-A^T\lambda-2QU,\quad \lambda(t_f)=0}
+\end{equation}
+
+\begin{equation}
+\mathbf{u=-\frac{1}{2}R^{-1}B^T\lambda}
+\end{equation}
+
+方程的解已经在控制工程中得到解决，直接引用结论，作动器控制力为：
+\begin{equation}
+\mathbf{u=-\frac{1}{2}R^{-1}B^TPU(t)=-GU(t)} \label{konghzhili}
+\end{equation}
+式中，\textbf{G}称为反馈增益矩阵
+\begin{equation}
+\mathbf{G=\frac{1}{2}R^{-1}B^TP} \label{fankui}
+\end{equation}
+
+将欲求的控制力\textbf{u}再代入式\ref{dairu1}，得
+\begin{equation}
+\dot{\mathbf{U}}=\mathbf{(A-BG)U+HF(t)}  \label{xianxingjiegou}
+\end{equation}
+
+式\ref{xianxingjiegou}表示一个线性结构，容易求得结构状态\textbf{U(t)}.需要注意的是，在方程求解过程中，忽略了外部激励\textbf{HF(t)}，因此只是近似最优。
+
+所以，经典最优控制算法求最优控制力步骤是
+\begin{enumerate}
+\item 写出结构运动方程，并转化为状态方程\ref{zhuangtai}；
+\item 根据式\ref{fankui}，得到反馈增益矩阵\textbf{G}；
+\item 将\textbf{G}代入式\ref{xianxingjiegou}求解结构反应；
+\item 将结构状态\textbf{U(t)}代入式\ref{konghzhili},得到作动器的最优控制力。
+\end{enumerate}
+\subsection{瞬时最优控制}
+经典最优控制
+\subsection{LQG控制}
 
 
 \subsection{半主动控制算法及系统}
