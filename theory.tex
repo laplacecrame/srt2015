@@ -65,7 +65,7 @@ M^{-1}
 \end{equation}
 式中，\textbf{Q,R}为权矩阵，分别表示控制效果的权值和控制力的权值。
 \begin{equation}
-\mathbf{s.t.\quad} \dot{\mathbf{U}}=\mathbf{AU+Bu+HF(t)},\quad \mathbf{U(0)=U_0}　　\label{dairu1}
+\mathbf{s.t.\quad} \dot{\mathbf{U}}=\mathbf{AU+Bu+HF(t)},\quad \mathbf{U}(0)=\mathbf{U}_0\label{dairu1}
 \end{equation}
 
 用优化的方法，可以得到
@@ -114,12 +114,12 @@ J=U^T(t)QU(t)+u^T(t)Ru(t)
 \end{equation}
 状态方程变为
 \begin{equation}
-U(t)=\Phi d(t-\Delta t)+\frac{\Delta t}{2}\left[Bu(t-)+HF(t)\right]　　\label{dairu2}
+U(t)=\Phi d(t-\Delta t)+\frac{\Delta t}{2}\left[Bu(t-)+HF(t)\right]\label{dairu2}
 \end{equation}
 
 
 \begin{equation}
-d(t-\Delta t)=e^{\lambda \Delta t}\Phi^{-1}\left\lbrace U(t-\Delta t)+ \frac{\Delta t}{2}\left[Bu(t-\Delta t)+HF(t-\Delta t)\right]\right\rbrace　　\label{dairu3}
+d(t-\Delta t)=e^{\lambda \Delta t}\Phi^{-1}\left\lbrace U(t-\Delta t)+ \frac{\Delta t}{2}\left[Bu(t-\Delta t)+HF(t-\Delta t)\right]\right\rbrace\label{dairu3}
 \end{equation}
 
 然后用与经典最优控制算法相同的优化方法，求解得到
