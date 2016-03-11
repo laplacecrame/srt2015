@@ -101,9 +101,48 @@ M^{-1}
 \item 将结构状态\textbf{U(t)}代入式\ref{konghzhili},得到作动器的最优控制力。
 \end{enumerate}
 \subsubsection{瞬时最优控制}
-经典最优控制
-\subsubsection{LQG控制}
+经典最优控制忽略了外部激励　\textbf{HF(t)},所以求得的最优控制力只是近似最优，同时，由于经典的最优控胡子算法的目标函数是一个积分，说明整个时间段内结构参数不变，也就是说，经典最优控制算法只能对线性结构进行求解，为了改进这些问题，Yang　提出了瞬时最优控制算法，该算法作了三点改进：
+\begin{enumerate}
+\item 性能指标由全部时间内的二次型最小改为每时刻的二次型最小；
+\item 不再用　Ricaati　方程求解控制力，而是将状态方程变换为差分方程，差分方程中的变量只与前一时刻的值有关，这样就可以迭代求解控制力和结构的响应；
+\item　瞬时最优控制的目标函数是每时刻最优，也就是说，结构仅在微小时段内为线性，所以该算法可以解决非线性结构的控制问题。
+\end{enumerate}
 
+首先定义性能指标
+\begin{equation}
+J=U^T(t)QU(t)+u^T(t)Ru(t)
+\end{equation}
+状态方程变为
+\begin{equation}
+U(t)=\Phi d(t-\Delta t)+\frac{\Delta t}{2}\left[Bu(t-)+HF(t)\right]　　\label{dairu2}
+\end{equation}
+
+
+\begin{equation}
+d(t-\Delta t)=e^{\lambda \Delta t}\Phi^{-1}\left\lbrace U(t-\Delta t)+ \frac{\Delta t}{2}\left[Bu(t-\Delta t)+HF(t-\Delta t)\right]\right\rbrace　　\label{dairu3}
+\end{equation}
+
+然后用与经典最优控制算法相同的优化方法，求解得到
+\begin{equation}
+u=-\frac{\Delta t}{2}R^{-1}B^TQU(t)    \label{kongzhili2}
+\end{equation}
+再将式\ref{kongzhili2}　代入式\ref{dairu2}，得
+\begin{equation}
+U(t)=\left[I+\frac{\Delta t^2}{2}BR^{-1}B^TQ\right]^{-1}\left[\Phi d(t-\Delta t) +\frac{\Delta t}{2}HF(t)\right]  \label{diedai}
+\end{equation}
+
+式\ref{diedai}是一个迭代式，由此可以求得每个时刻的响应。
+
+因此，瞬时最优控制的步骤为：
+\begin{enumerate}
+\item 写出结构的运动方程，并转化为瞬时的状态方程，如式\ref{dairu2}；
+\item 给定结构的初始状态，用式\ref{dairu3}得到$d(t-\Delta t)$；
+\item 按照式\ref{diedai}得到下一时刻结构的响应$U(t)$；
+\item 按照式\ref{kongzhili2}得到下一时刻的控制力$U(t)$；
+\end{enumerate}
+
+\subsubsection{LQG控制}
+XXXX
 
 \subsection{半主动控制算法及系统}
 控制算法选择的好坏直接影响控制系统的性能。对磁流变阻尼结构来货，由于磁流变阻尼器是通过调整磁场的强度来调整产生的阻尼里，接着通过调节事假在磁流变阻尼器的电压（电流）大小使其产生的阻尼里趋向于最优的控制力。有效改变电压（电流）的大小，是利用磁流变阻尼器实现有效控制的关键所在。国内外学者根据磁流变阻尼器的特显，提出了很多种控制策略。
