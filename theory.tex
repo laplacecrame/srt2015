@@ -201,25 +201,40 @@ XXXX
 如图 XXXX，每一时刻地震加速度和建筑结构的状态被信号检测器检测并被输入到模糊逻辑控制器中，在预定的模糊规则和隶属函数下经模糊逻辑控制器的模糊推理后，得到一控制电流，将控制电流指令信号传递给磁流变阻尼器，磁流变阻尼器产生控制力并施加给结构。这便是加有磁流变阻尼器结构的模糊逻辑全态控制的整个构思框架。
 
 \paragraph{输入量、输出量的选取}
-模糊控制器应用比较多的是以误差和误差的变化为输入变量的二维模糊控制，选用位移与系统位移响应之间的误差$e$ 与变化率$\Delta e$作为控制器的输入量，控制电流变化的量为输出。
+\qquad 模糊控制器应用比较多的是以误差和误差的变化为输入变量的二维模糊控制，选用位移与系统位移响应之间的误差$e$ 与变化率$\Delta e$作为控制器的输入量，控制电流变化的量为输出。
 \paragraph{输入、输出变量的正规化处理及基本论域确定}
-在模糊控制器设计中，信号的实际变化范围称为变量的基本论域，误差变化及输出变量的变化区间，经变换得到正规化输入输出变量为：
+\qquad 在模糊控制器设计中，信号的实际变化范围称为变量的基本论域，误差变化及输出变量的变化区间，经变换得到正规化输入输出变量为：
 \[x=\frac{e}{e_{max}}\qquad \qquad y=\frac{\Delta e}{\Delta e_{max}}\qquad \qquad z=\frac{I}{I_{max}}\]
 
 其中，$x\in [-1,1]; y\in [-1,1]; z\in [0,1]$.
 
 \paragraph{模糊集合与隶属函数的确定}
-对论域 $x,y$,定义五个模糊子集表示输入的模糊状态
+\qquad 对论域 $x,y$,定义五个模糊子集表示输入的模糊状态
 \[\mathbf{\lbrace NB,NS,Z,PS,PB\rbrace}\]
 输出变量$z$的模糊集合也定义五个子集表示
 \[\mathbf{\lbrace Z,S,M,SB,B\rbrace}\]
-模糊语言变量隶属度函数输入、输出采用高斯型如图 XXXX
+模糊语言变量隶属度函数输入、输出采用高斯型如图
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{figure/fuzzyx}
+\includegraphics[width=0.5\linewidth]{figure/fuzzyy}
+\includegraphics[width=0.5\linewidth]{figure/fuzzyz}
+\end{figure}
 
 \paragraph{模糊控制规则的确定}
-模糊控制规则采用相关参考文献的控制规律 XXXX，根据模糊推理规则，输出与位移变化及其变化率的曲面关系如图XXXX
+\qquad 模糊控制规则采用相关参考文献的控制规律 XXXX，根据模糊推理规则，输出与位移变化及其变化率的曲面关系如图XXXX
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{figure/fuzzysurface}
+\end{figure}
 
 \paragraph{模糊推理与去模糊化}
-模糊推理本质上是将一个给定输入空间通过模糊逻辑的方法映射到一个特定的输出空间的计算过程。模糊控制器选择 Mamdani 推理法。经模糊控制器算出的精确控制量，通过输出控制量的比例因子确定输出的控制电流信号。采用重心法去模糊化。
+\qquad 模糊推理本质上是将一个给定输入空间通过模糊逻辑的方法映射到一个特定的输出空间的计算过程。模糊控制器选择 Mamdani 推理法。经模糊控制器算出的精确控制量，通过输出控制量的比例因子确定输出的控制电流信号。采用重心法去模糊化。下图给出了一个该模糊控制器的推理实例：
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\linewidth]{figure/fuzzyeg}
+\end{figure}
 
 \paragraph{模糊控制仿真}
 XXXX
