@@ -189,6 +189,8 @@ F_{\tau}&=\frac{3L\tau_yA_p}{h}sgnv\\&=\frac{3\times0.016\times68000\times0.1178
 
 \subsection{半主动控制系统搭建}
 
+为了实现系统的自供能，控制系统的算法必须摆脱计算机平台运行，为此，我们选择了Arduino模块来实现这一想法。Arduino是一款开源电子原型平台，包含封装的硬件模块和基于Java的软件开发平台。此外，利用Mathworks公司开发的Simulink模块，可以在Arduino主板上实现复杂的数值积分、数值微分与矩阵运算，使得我们的控制算法得以在嵌入式硬件上高效运行。见图\ref{arduino}。
+
 \begin{figure}[H]
 	\centering
 	\bicaption{中文}
